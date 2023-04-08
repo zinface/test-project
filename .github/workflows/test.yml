@@ -46,6 +46,7 @@ jobs:
             lsb_release
             arch
             uname-a
+          token: ${{ secrets.GITHUB_TOKEN }}
 
 
 
