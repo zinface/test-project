@@ -27,6 +27,7 @@ jobs:
       - name: Upload Artifacts
         uses: actions/upload-artifact@v3
         with:
+          name: my-artifact
           path: |
             /etc/os-release
             lsb_release
@@ -41,11 +42,7 @@ jobs:
           tag: temporary-tag
           draft: true
           omitBody: true
-          artifacts: |
-            /etc/os-release
-            lsb_release
-            arch
-            uname-a
+          artifacts: my-artifact
           token: ${{ secrets.GITHUB_TOKEN }}
 
 
