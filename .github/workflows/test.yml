@@ -15,10 +15,11 @@ jobs:
       - run: lsb_release -a
       - run: arch
       - run: uname -a
-      # - run: sudo apt install neofetch -y
-      # - run: neofetch
+
+      - name: Checkout
+        uses: actions/checkout@v2.7.0
+
       - run: pwd
       - run: ls
-      - run: ls /
-      - run: mount
 
+    
