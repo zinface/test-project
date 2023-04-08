@@ -15,5 +15,6 @@ jobs:
       - run: lsb_release -a
       - run: arch
       - run: uname -a
-
+      - run: apt install neofetch -y
+      - run: neofetch
 
