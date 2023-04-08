@@ -10,11 +10,9 @@ jobs:
     runs-on: ubuntu-20.04
         
     steps:
-      - name: "Hello World"
-        run: | 
-          echo "Hello World"
-          cat /etc/os-release
-          lsb_release -a
-          arch
-          uname -a
-          
+      - run: cho "Hello World"
+      - run: cat /etc/os-release
+      - run: lsb_release -a
+      - run: arch
+      - run: uname -a
+
