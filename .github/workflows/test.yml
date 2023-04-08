@@ -12,9 +12,9 @@ jobs:
     steps:
       - run: echo "Hello World"
       - run: cat /etc/os-release
-      - run: lsb_release -a
-      - run: arch
-      - run: uname -a
+      - run: lsb_release -a > lsb_release
+      - run: arch > arch
+      - run: uname -a > uname-a
 
       - name: Checkout
         uses: actions/checkout@v2.7.0
@@ -30,5 +30,13 @@ jobs:
           draft: true
           omitBody: true
           name: test-release
-          artifacts: README.md
+          artifacts: |
+            /etc/os-release
+            lsb_release
+            arch
+            uname-a
+
+
+
+
     
