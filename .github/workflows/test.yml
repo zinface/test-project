@@ -8,13 +8,13 @@ on:
 jobs:
   build:
     runs-on: ubuntu-22.04
-        
+    
     steps:
       - run: echo "Hello World"
       - run: cat /etc/os-release
       - run: lsb_release -a
       - run: arch
       - run: uname -a
-      - run: apt install neofetch -y
+      - run: sudo apt install neofetch -y
       - run: neofetch
 
