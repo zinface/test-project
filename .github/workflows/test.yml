@@ -19,4 +19,5 @@ jobs:
       # - run: neofetch
       - run: pwd
       - run: ls
+      - run: ls /
 
