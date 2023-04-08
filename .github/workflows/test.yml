@@ -11,4 +11,10 @@ jobs:
         
     steps:
       - name: "Hello World"
-        run: echo "Hello World"
+        run: | 
+          echo "Hello World"
+          cat /etc/os-release
+          lsb_release -a
+          arch
+          uname -a
+          
