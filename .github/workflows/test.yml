@@ -27,9 +27,10 @@ jobs:
       - name: Create Release
         uses: ncipollo/release-action@v1.12.0
         with:
+          name: test-release
+          tag: temporary-tag
           draft: true
           omitBody: true
-          name: test-release
           artifacts: |
             /etc/os-release
             lsb_release
