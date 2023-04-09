@@ -110,3 +110,49 @@ jobs:
     ```
 
 ![](20230409173349.png)
+
+
+7. 这是我的模板：
+
+    ```yml
+    name: Test Action
+    
+    on:
+      push:
+        branches:
+          - master
+    
+    jobs:
+      build:
+        runs-on: ubuntu-22.04
+        
+        steps:
+          - name: Checkout
+            uses: actions/checkout@v2.7.0
+    
+          - run: cat README.md
+    
+          - run: echo "Hello World"
+          - run: mkdir -p artifacts
+          - run: cat /etc/os-release
+          - run: cp /etc/os-release artifacts
+          - run: lsb_release -a > artifacts/lsb_release
+          - run: arch > artifacts/arch
+          - run: uname -a > artifacts/uname-a
+    
+          - run: pwd
+          - run: ls
+    
+          - name: Create Release
+            uses: ncipollo/release-action@v1.12.0
+            with:
+              name: test-release
+              body: |
+                This is the temporary release.
+              tag: temporary-tag
+              draft: true
+              omitBody: true
+              artifacts: "artifacts/*"
+              token: ${{ secrets.GITHUB_TOKEN }}
+    
+    ```
