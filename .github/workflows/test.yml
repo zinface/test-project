@@ -16,10 +16,12 @@ jobs:
       - run: cat README.md
 
       - run: echo "Hello World"
+      - run: mkdir -p artifacts
       - run: cat /etc/os-release
-      - run: lsb_release -a > lsb_release
-      - run: arch > arch
-      - run: uname -a > uname-a
+      - run: cp /etc/os-release artifacts
+      - run: lsb_release -a > artifacts/lsb_release
+      - run: arch > artifacts/arch
+      - run: uname -a > artifacts/uname-a
 
       - run: pwd
       - run: ls
@@ -44,11 +46,7 @@ jobs:
           tag: temporary-tag
           draft: true
           omitBody: true
-          artifacts: |
-            /etc/os-release
-            lsb_release
-            arch
-            uname-a
+          artifacts: "artifacts/*"
           token: ${{ secrets.GITHUB_TOKEN }}
 
 
