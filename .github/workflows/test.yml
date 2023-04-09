@@ -26,17 +26,6 @@ jobs:
       - run: pwd
       - run: ls
 
-      # - name: Upload Artifacts
-      #   uses: actions/upload-artifact@v3
-      #   with:
-      #     name: my-artifact
-      #     path: |
-      #       /etc/os-release
-      #       lsb_release
-      #       arch
-      #       uname-a
-
-
       - name: Create Release
         uses: ncipollo/release-action@v1.12.0
         with:
