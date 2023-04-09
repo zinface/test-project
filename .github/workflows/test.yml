@@ -46,9 +46,9 @@ jobs:
           omitBody: true
           artifacts: |
             /etc/os-release
-            lsb_release
-            arch
-            uname-a
+            ./lsb_release
+            ./arch
+            ./uname-a
           token: ${{ secrets.GITHUB_TOKEN }}
 
 
