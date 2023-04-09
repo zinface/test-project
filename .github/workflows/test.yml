@@ -24,15 +24,15 @@ jobs:
 
       - run: cat README.md
 
-      - name: Upload Artifacts
-        uses: actions/upload-artifact@v3
-        with:
-          name: my-artifact
-          path: |
-            /etc/os-release
-            lsb_release
-            arch
-            uname-a
+      # - name: Upload Artifacts
+      #   uses: actions/upload-artifact@v3
+      #   with:
+      #     name: my-artifact
+      #     path: |
+      #       /etc/os-release
+      #       lsb_release
+      #       arch
+      #       uname-a
 
 
       - name: Create Release
@@ -44,7 +44,11 @@ jobs:
           tag: temporary-tag
           draft: true
           omitBody: true
-          artifacts: my-artifact
+          artifacts: |
+            /etc/os-release
+            lsb_release
+            arch
+            uname-a
           token: ${{ secrets.GITHUB_TOKEN }}
 
 
