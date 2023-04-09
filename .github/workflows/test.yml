@@ -39,6 +39,8 @@ jobs:
         uses: ncipollo/release-action@v1.12.0
         with:
           name: test-release
+          body: |
+            This is the temporary release.
           tag: temporary-tag
           draft: true
           omitBody: true
