@@ -10,19 +10,19 @@ jobs:
     runs-on: ubuntu-22.04
     
     steps:
+      - name: Checkout
+        uses: actions/checkout@v2.7.0
+
+      - run: cat README.md
+
       - run: echo "Hello World"
       - run: cat /etc/os-release
       - run: lsb_release -a > lsb_release
       - run: arch > arch
       - run: uname -a > uname-a
 
-      - name: Checkout
-        uses: actions/checkout@v2.7.0
-
       - run: pwd
       - run: ls
-
-      - run: cat README.md
 
       # - name: Upload Artifacts
       #   uses: actions/upload-artifact@v3
@@ -46,9 +46,9 @@ jobs:
           omitBody: true
           artifacts: |
             /etc/os-release
-            ./lsb_release
-            ./arch
-            ./uname-a
+            lsb_release
+            arch
+            uname-a
           token: ${{ secrets.GITHUB_TOKEN }}
 
 
